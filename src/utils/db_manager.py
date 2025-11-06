@@ -3,6 +3,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from src.database import assync_session_maker
 from src.repositories.auth import UserRepository
+from src.repositories.notifications import NotificationRepository
 
 class DBManager:
     
@@ -13,6 +14,7 @@ class DBManager:
         self.session = self.session_factory()
         
         self.users = UserRepository(self.session)
+        self.notifications = NotificationRepository(self.session)
         
         return self
         

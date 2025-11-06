@@ -1,6 +1,5 @@
 from fastapi import APIRouter, Request, Response
 
-
 from src.api.dependencies import DBDep, UserIdDep
 from src.services.auth import AuthService
 from src.schemas.auth import UserCreateRequest, UserLoginIn, UserPutUpdate

@@ -23,6 +23,12 @@ class JWTTokenHasExpiredException(BaseException):
 
 class ObjectAlreadyExistException(BaseException):
     detail = "Объект уже существует"
+    
+class NotFullBodyRequest(BaseException):
+    detail = "Неполные данные в Body"
+    
+class InvalidTemplateException(BaseException):
+    detail = "Неверный шаблон"
 
 
 
@@ -54,3 +60,11 @@ class JWTTokenHasExpiredHTTPException(BaseHTTPException):
 class UserAlreadyExistHTTPException(BaseHTTPException):
     status_code = 409 
     detail = "Пользователь с таким email уже существует"
+    
+class NotFullBodyRequestHTTPException(BaseHTTPException):
+    status_code = 422
+    detail = "Неполные данные в Body"
+    
+class InvalidTemplateHTTPException(BaseHTTPException):
+    status_code = 422
+    detail = "Неверный шаблон"
